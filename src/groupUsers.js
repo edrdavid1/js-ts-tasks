@@ -9,17 +9,9 @@
  * @param {Array<unknown>} users
  * @returns {Object<employees: Array<any>, contractors: Array<any>>}
  */
-
-interface User {
-  id: number;
-  name: string;
-  type: 'EMPLOYEE' | 'CONTRACTOR';
-}
-
-
-module.exports.groupUsers = function ( users: Array<User> ): Record<'employees' | 'contractors', Array<User>> {
+module.exports.groupUsers = function (users) {
     return {
-      employees: users.filter(user => user.type === 'EMPLOYEE'),
-      contractors: users.filter(user => user.type === 'CONTRACTOR'),
+        employees: users.filter(function (user) { return user.type === 'EMPLOYEE'; }),
+        contractors: users.filter(function (user) { return user.type === 'CONTRACTOR'; }),
     };
-  };
+};
