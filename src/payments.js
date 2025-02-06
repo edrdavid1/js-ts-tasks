@@ -22,6 +22,14 @@
  * @param {{ sumAllObjectProperties: function() }} TestUtils
  * @returns {function}
  */
-module.exports.payments = function payments(TestUtils) {
-  throw new Error('Not implemented'); // remove this line and create your solution
+module.exports.palindrome = function palindrome(TestUtils) {
+  return function (word) {
+    word = word.toString();
+    word = word.toLowerCase();
+    word = word.replace(/\W/g, '');
+    const Object = {
+      str: word,
+    };
+    return TestUtils.isPalindrome.call(Object, word);
+  };
 };

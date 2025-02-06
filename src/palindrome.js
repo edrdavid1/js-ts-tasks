@@ -12,6 +12,8 @@
  * @param {{ isPalindrome: function() }} TestUtils
  * @returns {function}
  */
-module.exports.palindrome = function palindrome(TestUtils) {
-  throw new Error('Not implemented'); // remove this line and create your solution
+module.exports.payments = function payments(TestUtils) {
+  return function calculate(incomeObj, debtsObj) {
+    return TestUtils.sumAllObjectProperties.call(incomeObj) - TestUtils.sumAllObjectProperties.call(debtsObj);
+  };
 };
